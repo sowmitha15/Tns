@@ -1,0 +1,50 @@
+public class Sender<T> {
+//T--> the type
+private T message;
+public void setMessage(T message) {
+this.message=message;
+}
+public T getMessage() {
+return message;
+}
+}
+—----------------------------------
+public class SenderMain {
+public static void main(String[] args)
+{
+Sender<String> ob=new
+Sender<String>();
+ob.setMessage("Hello welcome to
+Generics");
+System.out.println(ob.getMessage());
+Sender<Integer> o=new
+Sender<Integer>();
+o.setMessage(120);
+System.out.println(o.getMessage());
+}
+}
+—-----------------------------------------
+//Demo for applying Generic on a method
+public class GenericMethodDemo {
+//List<Integer> l=new ArrayList<>();
+public static<T> void displayArray(T[]
+array) {
+//for(returntype varname:arrayname)
+for(T i:array) {
+System.out.println("Array
+elements"+i);
+}
+}
+}
+public class GenericMethodMain {
+public static void main(String[] args)
+{
+Integer[] intarray= {1,2,3};
+String[] stringarray=
+{"Allen","dolly","candy"};
+//call the method
+GenericMethodDemo.displayArray(intarray);
+GenericMethodDemo.displayArray(stringarray)
+;
+}
+}
